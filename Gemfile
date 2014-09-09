@@ -13,7 +13,7 @@ group :test do
 end
 
 group :development do
-  gem 'ruby_gntp'
+  # gem 'ruby_gntp'
 end
 
 # Use sqlite3 as the database for Active Record
