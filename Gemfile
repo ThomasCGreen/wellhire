@@ -7,6 +7,7 @@ gem 'rspec-rails'
 gem 'guard-bundler'
 gem 'guard-rspec'
 gem 'factory_girl_rails'
+gem 'twitter-bootstrap-rails'
 
 group :test do
   gem 'capybara'

@@ -2,11 +2,28 @@
 <html>
 <head>
   <title>Wellhire</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<%= nav_bar :fixed => :top,
+            :brand => image_tag('wellhire_logo.png', size: '124x25'),
+            :responsive => true do %>
+  <%= menu_group do %>
+    <%= menu_item "<i class='fa fa-users'></i> Candidates".html_safe %>
+    <%= menu_item "<i class='fa fa-clipboard'></i> My Opportunities".html_safe, view_path %>
+    <%= menu_item "<i class='fa fa-inbox'></i> Inbox".html_safe %>
+  <% end %>
+  <%= menu_group :pull => :right do %>
+    <%= menu_item "<i class='fa fa-plus-circle'></i> New Opportunity".html_safe, '#', { :class => 'btn btn-default' } %>
+    <%= drop_down "Products" do %>
+      <%= menu_item "My Account" %>
+      <%= menu_item "Sign out" %>
+    <% end %>
+  <% end -%>
+<% end %>
 
 <%= yield %>
 
